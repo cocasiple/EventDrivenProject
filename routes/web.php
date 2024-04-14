@@ -8,6 +8,8 @@ use \App\Http\Controllers\AssignDesignationController;
 use App\Http\Controllers\DeductionsController;
 use App\Http\Controllers\LeavesController;
 use App\Http\Controllers\EarningsController;
+use App\Http\Controllers\GovernmentContributionsController;
+use App\Http\Controllers\PayrollController;
 
 /*
 |--------------------------------------------------------------------------
@@ -80,5 +82,16 @@ Route::get('/deductions', [DeductionsController::class, 'create'])->name('deduct
 Route::post('/deductions/store', [DeductionsController::class, 'store'])->name('deductions.store');
 
 Route::delete('/deductions/{deductions}', [DeductionsController::class, 'destroy'])->name('deductions.destroy');
+Route::get('/government_contributions', [GovernmentContributionsController::class, 'index'])->name('government_contributions.index');
+Route::get('/government_contributions/create', [GovernmentContributionsController::class, 'create'])->name('government_contributions.create');
 
+Route::post('/government_contributions/store', [GovernmentContributionsController::class, 'store'])->name('government_contributions.store');
+
+Route::delete('/government_contributions/{government_contributions}', [GovernmentContributionsController::class, 'destroy'])->name('government_contributions.destroy');
+Route::get('/payroll', [PayrollController::class, 'index'])->name('payroll.index');
+Route::get('/payroll/create', [PayrollController::class, 'create'])->name('payroll.create');
+
+Route::post('/payroll/store', [PayrollController::class, 'store'])->name('payroll.store');
+
+Route::delete('/payroll/{payroll}', [PayrollController::class, 'destroy'])->name('payroll.destroy');
 
